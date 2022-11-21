@@ -13,6 +13,11 @@ public class Main {
         
         // This statement prints "Hello World" to the console.
         System.out.println("Hello World!");
+        
+        Book bookObject1 = new Book("B123456", "Rowling", 10, "Philly Stone");
+        
+        System.out.println(bookObject1.getAuthor());
+        
     
     } // End main method
 } // End Main class
