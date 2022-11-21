@@ -5,7 +5,7 @@
  *  Prints "Hello World!" to console.
 *
  ******************************************************************************/
-package ie.atu.mypackage;
+package ie.atu.bookmanagerpackage;
 
 public class Main {  
     // This is the main method.
