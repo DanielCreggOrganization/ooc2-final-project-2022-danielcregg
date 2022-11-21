@@ -8,6 +8,14 @@ public class Book {
 	private int age;
 	private String title;
 	
+	// Constructor
+	public Book(String bookId, String author, int age, String title) {
+		this.bookId = bookId;
+		this.author = author;
+		this.age = age;
+		this.title = title;
+	}
+
 	// Getters and Setters
 	public String getBookId() {
 		return bookId;
