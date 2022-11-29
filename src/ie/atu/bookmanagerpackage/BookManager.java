@@ -45,8 +45,8 @@ public class BookManager {
 
 	// Add book to list
 	public boolean addBookToList(String bookId, String author, int age, String title) {
-		// Check student details are vaild and if student is NOT already on list
-		if (Book.isValid(bookId, name, age) && !isOnList(bookId)) {
+		// If book is NOT already on list
+		if (!isOnList(bookId)) {
 			// Create book object with valid details and add student to the list
 			Book newBook = new Book(bookId, author, age, title);
 			return this.bookList.add(newBook);
