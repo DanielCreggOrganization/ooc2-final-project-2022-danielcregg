@@ -57,7 +57,7 @@ public class WidgetManager {
 	}
 
 	// Remove widget from list given studendID
-	public boolean removewidgetFromList(String widgetId) {
+	public boolean removeWidgetFromList(String widgetId) {
 		return widgetList.remove(findwidgetObjectByID(widgetId));
 	}
 
