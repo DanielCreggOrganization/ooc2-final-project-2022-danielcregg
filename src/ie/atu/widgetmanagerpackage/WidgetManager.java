@@ -23,7 +23,7 @@ public class WidgetManager {
 	}
 
 	// Find widget object by ID. Returns null if widget is not found.
-	public Widget findwidgetObjectByID(String widgetID) {
+	public Widget findWidgetObjectByID(String widgetID) {
 		// Search all student objects in the student list
 		for (Widget widgetObject : widgetList) {
 			// Compare IDs to ID passed in
@@ -40,7 +40,7 @@ public class WidgetManager {
 
 	// Returns true if student on list
 	public boolean isOnList(String widgetId) {
-		return widgetList.contains(findwidgetObjectByID(widgetId));
+		return widgetList.contains(findWidgetObjectByID(widgetId));
 	}
 
 	// Add widget to list
@@ -58,7 +58,7 @@ public class WidgetManager {
 
 	// Remove widget from list given studendID
 	public boolean removeWidgetFromList(String widgetId) {
-		return widgetList.remove(findwidgetObjectByID(widgetId));
+		return widgetList.remove(findWidgetObjectByID(widgetId));
 	}
 
 }
