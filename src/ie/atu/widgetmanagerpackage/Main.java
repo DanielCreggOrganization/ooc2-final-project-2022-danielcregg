@@ -15,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
+	// Createa a new instance of the WidgetManager class.
 	WidgetManager wm = new WidgetManager(); // Used for managing widgets
 
+	// Override the start method.
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -62,20 +64,24 @@ public class Main extends Application {
 		// Add Widget button action
 		btnAddWidget.setOnAction(e -> {
 			// If any of the Widget fields are empty print prompt message
-
-			// Create new Widget with information in text fields
-			// Add Widget to Widget list
-			if (wm.addWidgetToList(tfWidgetID.getText(), tfWidgetName.getText(),
-					Integer.parseInt(tfWidgetAge.getText()), tfWidgetColour.getText())) {
-				taMyOutput.setText("Widget added to list successfully\n");
+			if (tfWidgetID.getText().trim().equals("") || tfWidgetName.getText().trim().equals("")
+					|| tfWidgetAge.getText().trim().equals("") || tfWidgetColour.getText().trim().equals("")) {
+				taMyOutput.setText("Please enter ALL Widget details!");
 			} else {
-				taMyOutput.setText("Widget not added to list\n");
+				// Create new Widget with information in text fields
+				// Add Widget to Widget list
+				if (wm.addWidgetToList(tfWidgetID.getText(), tfWidgetName.getText(),
+						Integer.parseInt(tfWidgetAge.getText()), tfWidgetColour.getText())) {
+					taMyOutput.setText("Widget added to list successfully\n");
+				} else {
+					taMyOutput.setText("Widget not added to list\n");
+				}
+				// Clear input fields for next Widget
+				tfWidgetID.clear();
+				tfWidgetName.clear();
+				tfWidgetAge.clear();
+				tfWidgetColour.clear();
 			}
-			// Clear input fields for next Widget
-			tfWidgetID.clear();
-			tfWidgetName.clear();
-			tfWidgetAge.clear();
-
 		});
 
 		// Remove Widget button action
