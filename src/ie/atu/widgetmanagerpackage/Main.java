@@ -15,12 +15,16 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-	// Createa a new instance of the WidgetManager class.
+	// Creates a new instance of the WidgetManager class.
 	WidgetManager wm = new WidgetManager(); // Used for managing widgets
 
 	// Override the start method.
 	@Override
 	public void start(Stage primaryStage) {
+		
+		// Create variables to store number of arguments passed and their content
+		int noOfCmdLineArgs = 0; // Used to check if any arguments were passed
+		String cmdLineArgs = null; // Used to set stage title
 
 		// Create a GridPane to hold the GUI nodes
 		GridPane gridPane1 = new GridPane(); // Create gridpane node to use as root node of scene
@@ -108,7 +112,16 @@ public class Main extends Application {
 		Scene scene1 = new Scene(gridPane1, 600, 450);
 		// Preparing the Stage (i.e. the container of any JavaFX application)
 		// Set Stage Title
-		primaryStage.setTitle("Student Manager Application");
+		// Find number of command line arguments supplied
+		noOfCmdLineArgs = getParameters().getRaw().size();
+		if (noOfCmdLineArgs > 0) {
+			cmdLineArgs = getParameters().getRaw().toString();
+			// Remove unwanted characters ([ and ] and ,)from string
+			cmdLineArgs = cmdLineArgs.replaceAll("\\[|\\]|\\,", "");
+			primaryStage.setTitle(cmdLineArgs);
+		} else {
+			primaryStage.setTitle("Widget Manager Application");
+		}
 		// Setting the scene on which this stage will show
 		primaryStage.setScene(scene1);
 		// Display the stage
